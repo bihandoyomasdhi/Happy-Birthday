@@ -1,0 +1,1595 @@
+/* Cover depan */
+#book.cover-mode{
+    transform:translate(-75%, -50%);
+}
+
+/* Buku terbuka */
+#book.open-mode{
+    transform:translate(-50%, -50%);
+}
+
+/* Cover belakang (halaman terakhir) */
+#book.back-cover-mode{
+    transform:translate(-25%, -50%);
+}
+
+.balloon{
+    position:absolute;
+    top:-220px;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    will-change:transform;
+
+    animation-name:balloonFall;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+}
+
+@keyframes balloonFall{
+
+    0%{
+        transform:
+        translate(0,-220px)
+        rotate(-8deg);
+    }
+
+    15%{
+        transform:
+        translate(-15px,20vh)
+        rotate(6deg);
+    }
+
+    30%{
+        transform:
+        translate(12px,40vh)
+        rotate(-10deg);
+    }
+
+    45%{
+        transform:
+        translate(-18px,60vh)
+        rotate(8deg);
+    }
+
+    60%{
+        transform:
+        translate(10px,80vh)
+        rotate(-5deg);
+    }
+
+    80%{
+        transform:
+        translate(-12px,100vh)
+        rotate(7deg);
+    }
+
+    100%{
+        transform:
+        translate(8px,130vh)
+        rotate(-6deg);
+    }
+
+}
+
+
+.desktop-warning{
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 99999;
+    font-family: "Poppins", sans-serif;
+}
+
+.warning-box{
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.icon{
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.warning-box h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.warning-box p{
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.85);
+}
+
+.sub-text{
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgba(255,255,255,.6);
+    font-style: italic;
+}
+
+/*=========================
+FLOWER
+=========================*/
+
+.flower-layer{
+    z-index:20;
+}
+
+.flower{
+    position:absolute;
+    top:-150px;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    animation:flowerFall linear forwards;
+    will-change:transform;
+}
+
+
+
+@keyframes flowerFall{
+
+    0%{
+        transform:
+            translate(0,-150px)
+            rotate(0deg);
+        opacity:1;
+    }
+
+    25%{
+        transform:
+            translate(-20px,25vh)
+            rotate(90deg);
+    }
+
+    50%{
+        transform:
+            translate(15px,55vh)
+            rotate(180deg);
+    }
+
+    75%{
+        transform:
+            translate(-10px,85vh)
+            rotate(270deg);
+    }
+
+    100%{
+        transform:
+            translate(20px,120vh)
+            rotate(360deg);
+        opacity:1;
+    }
+
+}
+
+
+/*=========================
+LOCK SCREEN
+=========================*/
+
+.lock-screen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top,#334b8c33,transparent 40%),
+    rgba(26,34,56,.95);
+
+    backdrop-filter:blur(6px);
+
+    animation:fadeIn .8s ease forwards;
+    z-index:9999;
+}
+
+/*=========================
+CARD
+=========================*/
+
+.lock-box{
+    position:relative;
+
+    width:330px;
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.95);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25),
+    0 0 25px rgba(51,75,140,.15);
+
+    text-align:center;
+
+    transform:translateY(25px) scale(.95);
+    opacity:0;
+
+    animation:popup .7s .2s ease forwards;
+}
+
+.lock-box::before{
+    content:"";
+    position:absolute;
+    top:-70px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:120px;
+    height:120px;
+
+    background:url("lock_cover.png") center/contain no-repeat;
+}
+
+/*=========================
+TEXT
+=========================*/
+
+.lock-box h2{
+    color:#1a2238;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:26px;
+    font-weight:700;
+}
+
+#pinError{
+    color:#d64b4b;
+    min-height:20px;
+    font-size:14px;
+}
+
+/*=========================
+DOT
+=========================*/
+
+.pin-dots{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin:28px 0;
+}
+
+.dot{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+
+    border:2px solid #334b8c;
+    background:white;
+
+    transition:.25s;
+}
+
+.dot.active{
+    background:#334b8c;
+    transform:scale(1.25);
+
+    box-shadow:
+    0 0 10px rgba(51,75,140,.5);
+}
+
+/*=========================
+KEYPAD
+=========================*/
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:20px;
+}
+
+.keypad button{
+
+    width:68px;
+    height:68px;
+
+    margin:auto;
+
+    border:none;
+    border-radius:50%;
+
+    background:#f8f9fd;
+
+    color:#1a2238;
+
+    font-size:24px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+    0 6px 15px rgba(0,0,0,.08);
+}
+
+.keypad button:hover{
+
+    transform:
+    translateY(-3px);
+
+    background:#334b8c;
+    color:white;
+
+    box-shadow:
+    0 10px 20px rgba(51,75,140,.35);
+
+}
+
+.keypad button:active{
+
+    transform:scale(.93);
+
+}
+
+/* tombol masuk */
+
+#unlockBtn{
+
+    background:#334b8c;
+    color:white;
+
+}
+
+#unlockBtn:hover{
+
+    background:#253c79;
+
+}
+
+/* tombol hapus */
+
+#deleteBtn{
+
+    background:#eef2fb;
+    color:#334b8c;
+
+}
+
+#deleteBtn:hover{
+
+    background:#dbe5ff;
+
+}
+
+/*=========================
+ANIMASI
+=========================*/
+
+.lock-screen.hide{
+    animation:fadeOut .5s ease forwards;
+}
+
+@keyframes fadeIn{
+
+    from{opacity:0;}
+    to{opacity:1;}
+
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{opacity:1;}
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#1a2238;
+    overflow:hidden;
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#334b8c,#121a2f 70%);
+    z-index:-2;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+/* ===========================
+   BOOK
+=========================== */
+
+.book-wrapper{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .6s ease;
+}
+
+.book-wrapper.show{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+#book{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transition:none; /* tidak ada animasi saat load */
+}
+
+#book.ready{
+    transition:transform .6s ease;
+}
+
+/* Cover (1 halaman) */
+#book.cover-mode{
+    transform:translate(-75%,-50%);
+}
+
+/* Buku terbuka (2 halaman) */
+#book.open-mode{
+    transform:translate(-50%,-50%);
+}
+
+.page{
+
+    background-image:url("coverdalam.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    color:#333;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+.page::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(255,255,255,.08);
+
+    z-index:0;
+
+}
+
+.page > *{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/* ===========================
+   COVER
+=========================== */
+
+.cover{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    color:#fff;
+
+    background:url("coverdepanbelakakng.png") center center / cover no-repeat;
+
+    border:6px solid #fff;
+
+    box-shadow:
+        0 0 0 2px rgba(255,255,255,.25),
+        0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:2px solid rgba(255,255,255,.8);
+
+    border-radius:12px;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.5)
+    );
+
+}
+
+.cover-content{
+
+    position:relative;
+
+    z-index:1;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.cover h1{
+    font-family:'Pacifico',cursive;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.cover p{
+    opacity:.9;
+    margin-bottom:40px;
+}
+
+.cover button{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#1d3268;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cover button:hover{
+    transform:scale(1.08);
+}
+
+/* ==========================
+   PAGE CONTENT 1
+========================== */
+
+.single-page{
+    width:100%;
+    height:100%;
+    padding:45px 40px;
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.single-page h2{
+    margin:0;
+    font-size:34px;
+    color:#24386d;
+    text-align:center;
+}
+
+.single-page p{
+    margin:20px 0 30px;
+    width:90%;
+    text-align:center;
+    font-size:17px;
+    line-height:1.8;
+    color:#444;
+}
+
+
+/* ==========================
+   PHOTO
+========================== */
+
+.big-photo{
+    width:100%;
+    height:300px;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    border:6px solid white;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+    margin-bottom:30px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#ececec;
+}
+
+.big-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.paper-bottom{
+
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:130%;
+
+    pointer-events:none;
+
+}
+
+.paper-bottom img{
+
+    width:100%;
+    display:block;
+
+}
+
+
+/* ==========================
+   PAGE 2
+========================== */
+
+.page2-body{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:100%;
+}
+
+/* ==========================
+   KALENDER
+========================== */
+
+.calendar{
+    width:72%;
+    margin:15px auto 0;
+}
+
+.month{
+    text-align:center;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:12px;
+    color:#2f467f;
+}
+
+.day-name,
+.week{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+}
+
+.day-name div{
+    text-align:center;
+    font-size:11px;
+    font-weight:600;
+    color:#666;
+}
+
+.week div{
+    height:28px;
+    border-radius:7px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#f4f4f4;
+
+    font-size:12px;
+}
+
+.today{
+    background:#3d5aa8 !important;
+    color:#fff;
+    font-weight:bold;
+}
+
+.calendar-note{
+    margin-top:12px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* ==========================
+   FOTO
+========================== */
+
+/* Area untuk menampung foto */
+.photo-group{
+    position:relative;
+    width:100%;
+    height:220px;
+    margin-top:20px;
+}
+
+/* Style semua foto */
+.calendar-photo{
+    position:absolute;
+
+    width:200px;
+    aspect-ratio:16/9;
+
+    border:5px solid #fff;
+    border-radius:12px;
+    overflow:hidden;
+
+    background:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+    transition:.3s;
+}
+
+.calendar-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Foto pertama */
+.photo1{
+    right:20px;
+    bottom:100px;
+    transform:rotate(-8deg);
+    z-index:2;
+}
+
+/* Foto kedua */
+.photo2{
+    right:180px;
+    bottom:70px;
+    transform:rotate(7deg);
+    z-index:1;
+}
+
+.paper-bottom2{
+
+    position:absolute;
+    bottom:-150px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:130%;
+
+    pointer-events:none;
+
+}
+
+.paper-bottom2 img{
+
+    width:100%;
+    display:block;
+
+}
+
+/* ==========================
+   PAGE 3
+========================== */
+
+.message-photo{
+    width:48%;
+    aspect-ratio:3/4;
+
+    margin:0 auto 20px;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    border:6px solid #fff;
+    background:#fff;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.message-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+/* BOX */
+
+.message-box{
+
+    background:#fffdf8;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+.message-box p{
+
+    margin:0 0 12px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:1.65;
+
+    color:#555;
+
+}
+
+.signature{
+
+    margin-top:12px;
+
+    text-align:center;
+
+    font-family:'Pacifico',cursive;
+
+    font-size:22px;
+
+    color:#d66;
+
+}
+
+.paper-bottom2{
+
+    position:absolute;
+    bottom:-150px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:130%;
+
+    pointer-events:none;
+
+}
+
+.paper-bottom2 img{
+
+    width:100%;
+    display:block;
+
+}
+/* ==========================
+   PAGE 4
+========================== */
+
+.single-page{
+    width:100%;
+    height:100%;
+    padding:22px;
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.single-page h2{
+    margin:0 0 15px;
+    text-align:center;
+
+    font-size:28px;
+    color:#24386d;
+}
+
+.message-box{
+    padding:12px 15px;
+}
+
+.message-box p{
+    font-size:12px;
+    line-height:1.35;
+    margin-bottom:8px;
+    text-indent:16px;
+}
+
+.signature{
+    margin-top:10px;
+    font-size:20px;
+}
+
+.single-page{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.paper-bottom{
+
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:130%;
+
+    pointer-events:none;
+
+}
+
+.paper-bottom img{
+
+    width:100%;
+    display:block;
+
+}
+
+
+/* ==========================
+   NOTE
+========================== */
+
+.note{
+    width:100%;
+    margin-top:auto;
+}
+
+.note h3{
+    margin-bottom:12px;
+    color:#24386d;
+    font-size:24px;
+}
+
+.note textarea{
+    width:100%;
+    height:150px;
+
+    padding:18px;
+
+    border-radius:15px;
+    border:2px solid #eadfd7;
+
+    resize:none;
+
+    font-family:Poppins,sans-serif;
+    font-size:16px;
+
+    outline:none;
+    box-sizing:border-box;
+
+    background:#fffdfb;
+}
+
+.note textarea:focus{
+    border-color:#3d5aa8;
+}
+
+/* ===========================
+   STICKERS
+=========================== */
+
+.sticker-area{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:60px;
+}
+
+.sticker{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    box-shadow:0 8px 15px rgba(0,0,0,.2);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sticker:hover{
+    transform:scale(1.15) rotate(8deg);
+}
+
+
+/* ===========================
+   LAST PAGE
+=========================== */
+
+/* ===========================
+   BACK COVER
+=========================== */
+
+.last-page{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+    height:100%;
+
+    display:grid;
+    place-items:center;
+
+    padding:35px;
+
+    box-sizing:border-box;
+
+    color:#fff;
+
+    background:url("coverdepanbelakakng.png") center center / cover no-repeat;
+
+    border:6px solid #fff;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 0 0 2px rgba(255,255,255,.25),
+        0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.last-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.5)
+    );
+
+    z-index:0;
+
+}
+
+.last-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:2px solid rgba(255,255,255,.8);
+
+    border-radius:12px;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.last-content{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    width:100%;
+
+    transition:.7s cubic-bezier(.22,1,.36,1);
+
+}
+
+/*====================================
+        TITLE
+====================================*/
+
+.last-page h1{
+
+    margin:0;
+
+    font-family:'Pacifico',cursive;
+
+    font-size:52px;
+
+    line-height:1.15;
+
+    color:#fff;
+
+}
+
+.last-page p{
+
+    margin:6px 0 6px;
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    color:#fff;
+
+}
+
+/*====================================
+        WRAPPER
+====================================*/
+
+.tear-wrapper{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:6px;          /* sebelumnya 12px */
+
+    margin-top:0;     /* sebelumnya 8px */
+}
+
+/*====================================
+        BUTTON
+====================================*/
+
+.tear-btn{
+
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#4468ba,#2c4d98);
+
+    color:#fff;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.22);
+
+    transition:
+        transform .25s,
+        box-shadow .25s,
+        opacity .35s;
+
+}
+
+.tear-btn:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 16px 30px rgba(0,0,0,.28);
+
+}
+
+.tear-btn:active{
+
+    transform:scale(.96);
+
+}
+
+.tear-btn.press{
+
+    animation:shake .35s ease;
+
+}
+
+.tear-btn.hide{
+    display:none;
+}
+
+/*====================================
+        PHOTO AREA
+====================================*/
+
+.tear-photo{
+    margin-top:2px;   /* sebelumnya 10px */
+
+    width:230px;
+
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .7s ease,
+        opacity .5s ease;
+}
+
+.tear-photo.show{
+
+    max-height:280px;
+
+    opacity:1;
+
+}
+
+.last-content.photo-open{
+
+    transform:translateY(-0px);
+
+}
+
+/*====================================
+        PHOTO
+====================================*/
+
+.tear-photo img{
+
+    width:230px;
+
+    border:6px solid #fff;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+}
+
+.tear-photo.show img{
+
+    animation:
+        photoReveal
+        1s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+/*====================================
+        RIP EFFECT
+====================================*/
+
+.tear-effect{
+
+    width:0;
+    height:5px;
+
+    margin:0;
+
+    opacity:0;
+
+    background:
+    repeating-radial-gradient(
+        circle,
+        rgba(255,255,255,.95) 0 6px,
+        transparent 6px 10px
+    );
+
+}
+
+.tear-effect.play{
+
+    animation:
+        rip .55s ease forwards;
+
+}
+
+/*====================================
+        ANIMATION
+====================================*/
+
+@keyframes photoReveal{
+
+    0%{
+
+        transform:
+            translateY(40px)
+            scale(.7);
+
+        opacity:0;
+
+        filter:blur(3px);
+
+    }
+
+    60%{
+
+        transform:
+            translateY(-4px)
+            scale(.9);
+
+        opacity:1;
+
+        filter:blur(0);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity:1;
+
+        filter:blur(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#294a8e;
+    border-radius:20px;
+}
+
+/* ===========================
+   RESPONSIVE HP
+=========================== */
+@media (max-width: 768px) {
+
+    body{
+        overflow:hidden;
+    }
+
+    .book-wrapper{
+        width:100vw;
+        height:100vh;
+        padding:10px;
+    }
+
+    #book{
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%) !important;
+    }
+
+    .page{
+        border-radius:12px;
+    }
+
+    .single-page{
+        padding:18px;
+    }
+
+    .single-page h2{
+        font-size:22px;
+    }
+
+    .single-page p{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    .big-photo{
+        height:220px;
+    }
+
+    .calendar{
+        width:95%;
+    }
+
+    .calendar-photo{
+        width:120px;
+    }
+
+    .photo1{
+        right:10px;
+        bottom:70px;
+    }
+
+    .photo2{
+        right:90px;
+        bottom:40px;
+    }
+
+    .message-photo{
+        width:70%;
+    }
+
+    .last-page h1{
+        font-size:34px;
+    }
+
+    .tear-photo,
+    .tear-photo img{
+        width:170px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   SCRAPBOOK EDITOR
+=========================== */
+
+.scrapbook-page{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.scrap-item{
+    position:absolute;
+    cursor:move;
+    user-select:none;
+    transition:.2s;
+}
+
+.scrap-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    pointer-events:none;
+}
+
+.scrap-item.selected{
+    outline:2px dashed #2196f3;
+}
+
+.resize{
+    width:15px;
+    height:15px;
+    background:#2196f3;
+    position:absolute;
+    right:-8px;
+    bottom:-8px;
+    border-radius:50%;
+    cursor:nwse-resize;
+}
+
+.rotate{
+    width:15px;
+    height:15px;
+    background:#ff9800;
+    position:absolute;
+    left:-8px;
+    top:-8px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.sticker-panel{
+    position:fixed;
+    right:20px;
+    top:20px;
+    width:170px;
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.sticker-panel img{
+    width:60px;
+    margin:5px;
+    cursor:pointer;
+}
+
+
+/* ===========================
+   CODE
+=========================== */

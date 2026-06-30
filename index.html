@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Scrapbook</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<div id="balloonLayer" class="balloon-layer"></div>
+
+<div id="flowerLayer" class="flower-layer"></div>
+
+<body>
+
+<audio id="lockMusic"loop>
+    <source src="pass.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bookMusic" loop>
+    <source src="masuk.mp3" type="audio/mpeg">
+</audio>
+
+<body>
+
+<div class="background"></div>
+
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen" class="lock-screen">
+
+    <div class="lock-box">
+
+        <h2>Masukkan PIN dulu</h2>
+
+        <div class="pin-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <p id="pinError"></p>
+
+        <div class="keypad">
+
+            <button class="num">1</button>
+            <button class="num">2</button>
+            <button class="num">3</button>
+
+            <button class="num">4</button>
+            <button class="num">5</button>
+            <button class="num">6</button>
+
+            <button class="num">7</button>
+            <button class="num">8</button>
+            <button class="num">9</button>
+
+            <button id="deleteBtn">⌫</button>
+            <button class="num">0</button>
+            <button id="unlockBtn">></button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="book-wrapper">
+
+<div id="book">
+
+
+
+<!-- COVER -->
+<div class="page cover">
+
+<div class="cover-content">
+
+<h1>Happy Birthday</h1>
+
+<p>
+Evalin Trisya Maliku
+</p>
+
+<button id="openBook">
+Open Book
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- PAGE 1 -->
+
+<div class="page">
+
+    <div class="single-page">
+
+        <h2>Selamat ulang tahun! 🎉</h2>
+
+        <p>
+            Semoga semua doa dan impianmu satu per satu menjadi kenyataan.
+        </p>
+
+        <div class="big-photo">
+            <img src="foto2.png" alt="Foto Ulang Tahun">
+        </div>
+
+    </div>
+        <div class="paper-bottom2">
+    <img src="bawah2.png" alt="">
+</div>
+</div>
+
+
+
+
+<!-- PAGE 2 -->
+
+<div class="page">
+
+    <div class="single-page">
+
+        <h2>📅 Kalender Bulan Ini</h2>
+
+        <div class="calendar">
+
+            <div class="month">Juni 2026</div>
+
+            <div class="week day-name">
+                <div>Sen</div>
+                <div>Sel</div>
+                <div>Rab</div>
+                <div>Kam</div>
+                <div>Jum</div>
+                <div>Sab</div>
+                <div>Min</div>
+            </div>
+
+            <div class="week">
+
+                <div></div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+
+                <div>28</div>
+                <div>29</div>
+                <div class="today">30 🎉 </div>
+
+            </div>
+
+        </div>
+
+        <p class="calendar-note">
+            Hari spesialmu 🎉
+        </p>
+
+         <!-- FOTO -->
+<div class="photo-group">
+
+    <div class="calendar-photo photo1">
+        <img src="foto3.JPG" alt="">
+    </div>
+
+    <div class="calendar-photo photo2">
+        <img src="foto4.JPG" alt="">
+    </div>
+
+</div>
+
+    </div>
+            <div class="paper-bottom2">
+    <img src="bawah2.png" alt="">
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+
+
+<div class="page">
+    
+
+    <div class="single-page">
+
+        <h2>💌 A Little Message</h2>
+
+        <div class="message-photo">
+            <img src="foto5.png" alt="Foto Kenangan">
+        </div>
+
+        <div class="message-box">
+
+            <p>
+                Terima kasih sudah menjadi seseorang yang selalu
+                membawa kebahagiaan untuk orang-orang di sekitarmu.
+            </p>
+
+            <p>
+                Semoga setiap langkahmu dipenuhi keberuntungan,
+                kesehatan, dan mimpi-mimpi yang tercapai.
+            </p>
+
+        </div>
+
+        <div class="paper-bottom">
+    <img src="bawah.png" alt="">
+</div>
+
+    </div>
+
+</div>
+
+
+<!-- PAGE 4 -->
+
+<div class="page">
+
+    <div class="single-page">
+
+        <h2>Honesty</h2>
+
+        <div class="message-box">
+
+            <p>
+                Ada satu hal yang sudah lama ingin aku sampaikan.
+            </p>
+
+            <p>
+                Maaf ya, dulu aku kurang sadar dan kurang peka untuk menangkap semua pesan yang mungkin pernah kamu berikan. Baru sekarang aku menyadari kalau yang selama ini aku cari ternyata bukan seseorang yang jauh, melainkan seseorang yang sudah ada di depanku.
+            </p>
+
+            <p>
+                Kalau dipikir-pikir lagi, perasaan itu mulai tumbuh sejak 2018. Awalnya hanya rasa kagum. Aku sempat berpikir itu hanyalah perasaan sesaat yang akan hilang seiring berjalannya waktu. Namun ternyata, hingga hari ini, perasaan itu masih tetap ada.
+            </p>
+
+            <p>
+                Aku menyampaikan ini bukan untuk meminta balasan ataupun mengharapkan jawaban apa pun darimu. Aku hanya ingin jujur tentang apa yang selama ini kusimpan. Setidaknya, aku tidak lagi memendam perasaan yang sudah menemaniku selama bertahun-tahun.
+            </p>
+
+            <p>
+                Apa pun responsmu, atau bahkan jika kamu memilih untuk tidak merespons, aku akan tetap menghargai dan menghormati perasaanmu. Terima kasih karena tanpa sadar, selama ini kamu selalu memiliki tempat di hatiku.
+            </p>
+
+        </div>
+
+<div class="paper-bottom">
+    <img src="bawah.png" alt="">
+</div>
+
+    </div>
+
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+
+    <div class="last-page">
+
+        <div class="last-content">
+
+            <h1>Thank You ❤️</h1>
+
+            <p>
+                Maxz<br>
+                2018 - now
+            </p>
+
+            <div class="tear-wrapper">
+
+                <button id="openMemory" class="tear-btn">
+                    💌 Lihat Kenangan Terakhir
+                </button>
+
+                <div id="tearEffect" class="tear-effect"></div>
+
+                <div class="tear-photo">
+
+                    <img src="foto1.jpg" alt="Kenangan">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
