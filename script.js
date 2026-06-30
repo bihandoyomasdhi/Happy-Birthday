@@ -435,20 +435,23 @@ btn.onclick = () => {
 const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 
 if (isMobile) {
+    document.body.style.margin = "0";
     document.body.innerHTML = `
         <div style="
             display:flex;
             justify-content:center;
             align-items:center;
-            min-height:100vh;
+            width:100%;
+            height:100dvh;
             background:linear-gradient(135deg,#2b1055 0%,#5f0f40 45%,#a4133c 100%);
             color:#fff;
             text-align:center;
-            padding:-20px;
+            padding:20px;
+            box-sizing:border-box;
             font-family:'Poppins',sans-serif;
-            overflow:hidden;
         ">
             <div style="
+                width:100%;
                 max-width:430px;
                 background:rgba(255,255,255,.08);
                 backdrop-filter:blur(15px);
@@ -456,13 +459,13 @@ if (isMobile) {
                 border:1px solid rgba(255,255,255,.15);
                 border-radius:24px;
                 padding:40px 30px;
+                box-sizing:border-box;
                 box-shadow:0 15px 40px rgba(0,0,0,.35);
             ">
                 <h2 style="
                     font-size:30px;
                     font-weight:600;
-                    margin-bottom:18px;
-                    color:#fff;
+                    margin:0 0 18px;
                 ">
                     Sebentar Ya...
                 </h2>
@@ -471,20 +474,16 @@ if (isMobile) {
                     font-size:17px;
                     line-height:1.9;
                     color:#f8f8f8;
-                    margin-bottom:20px;
+                    margin:0;
                 ">
                     Ada sesuatu yang ingin kami tampilkan
-                    dengan cara yang paling indah.
-                    Karena itu, halaman ini hanya dapat dibuka melalui
-                    <strong style="color:#FFD6E8;">browser Laptop atau Komputer</strong>.
-                </p>
+                    dengan cara yang paling indah.<br><br>
 
-                <div style="
-                    margin-top:28px;
-                    font-size:26px;
-                    letter-spacing:10px;
-                ">
-                </div>
+                    Karena itu, halaman ini hanya dapat dibuka melalui
+                    <strong style="color:#FFD6E8;">
+                        browser Laptop atau Komputer
+                    </strong>.
+                </p>
             </div>
         </div>
     `;
