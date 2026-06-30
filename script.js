@@ -476,8 +476,8 @@ if (isMobile) {
                     color:#f8f8f8;
                     margin:0;
                 ">
-                    Ada sesuatu yang ingin kami tampilkan
-                    dengan cara yang paling indah.<br><br>
+                    Ada sesuatu yang ingin di tampilkan
+                    dengan cara yang sederhana.<br><br>
 
                     Karena itu, halaman ini hanya dapat dibuka melalui
                     <strong style="color:#FFD6E8;">
