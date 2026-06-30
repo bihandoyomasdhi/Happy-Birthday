@@ -458,8 +458,6 @@ if (isMobile) {
                 padding:40px 30px;
                 box-shadow:0 15px 40px rgba(0,0,0,.35);
             ">
-                <div style="font-size:70px;margin-bottom:18px;"></div>
-
                 <h2 style="
                     font-size:30px;
                     font-weight:600;
