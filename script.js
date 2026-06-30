@@ -444,7 +444,7 @@ if (isMobile) {
             background:linear-gradient(135deg,#2b1055 0%,#5f0f40 45%,#a4133c 100%);
             color:#fff;
             text-align:center;
-            padding:30px;
+            padding:0px;
             font-family:'Poppins',sans-serif;
             overflow:hidden;
         ">
